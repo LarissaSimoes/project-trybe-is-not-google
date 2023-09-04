@@ -9,7 +9,10 @@ def process(path_file, instance):
         "qtd_linhas": len(file),
         "linhas_do_arquivo": file,
     }
-    if not any(item["nome_do_arquivo"] == path_file for item in instance.items):
+    if not any(
+        item["nome_do_arquivo"] == path_file
+        for item in instance.items
+    ):
         instance.enqueue(informations)
         sys.stdout.write(f"{informations}\n")
 
@@ -17,7 +20,9 @@ def process(path_file, instance):
 def remove(instance):
     if len(instance) > 0:
         item = instance.dequeue()
-        sys.stdout.write(f"Arquivo {item['nome_do_arquivo']} removido com sucesso\n")
+        sys.stdout.write(
+            f"Arquivo {item['nome_do_arquivo']} removido com sucesso\n"
+        )
     else:
         sys.stdout.write("Não há elementos\n")
 
