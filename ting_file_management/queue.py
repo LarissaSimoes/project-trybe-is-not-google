@@ -6,7 +6,7 @@ class Queue(AbstractQueue):
         self.items = []
 
     def __len__(self):
-       return len(self.items)
+        return len(self.items)
 
     def enqueue(self, value):
         self.items.append(value)
